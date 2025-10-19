@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35/5 Garage - Karşıyaka'nın Zirvedeki Eğlence ve Simülasyon Merkezi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Exo+2:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/1A472A/A6262F?text=G" type="image/png">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Özel İmleç -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Ön Yükleyici -->
+    <div id="preloader">
+        <h1 class="loader-logo">35<span style="color: var(--ksk-red);">/</span>5<span style="color: var(--ksk-green);">.</span></h1>
+    </div>
+
+    <!-- Parallax Arka Plan -->
+    <div id="parallax-bg"></div>
+    
+    <!-- Header -->
+     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 grid grid-cols-[auto_auto_auto] items-center justify-center gap-0">
+            <div class="hidden md:flex items-center justify-start">
+                <nav class="flex items-center space-x-2 text-sm font-bold tracking-widest uppercase">
+                    <a href="#neden-biz" class="text-gray-300 hover:text-white transition-colors">Neden Biz</a>
+                    <a href="#hizmetler" class="text-gray-300 hover:text-white transition-colors">Deneyimler</a>
+                    <a href="#hakkimizda" class="text-gray-300 hover:text-white transition-colors">Hakkımızda</a>
+                </nav>
+            </div>
+            <a href="#hero" class="justify-self-center">
+                <img src="sources/WhatsApp Image 2025-09-01 at 18.15.30_a92e116c.png" alt="35/5 Garage logo" class="h-14 md:h-16 w-auto select-none" loading="eager" />
+            </a>
+            <div class="hidden md:flex items-center space-x-2 justify-end text-sm font-bold tracking-widest uppercase">
+                <a href="#galeri" class="text-gray-300 hover:text-white transition-colors">Galeri</a>
+                <a href="#video-showcase" class="text-gray-300 hover:text-white transition-colors">Video</a>
+                <a href="#yorumlar" class="text-gray-300 hover:text-white transition-colors">Yorumlar</a>
+                <a href="#iletisim" class="text-gray-300 hover:text-white transition-colors">İletişim</a>
+                <a href="#iletisim" class="bg-transparent border-2 border-green-700 text-green-500 font-bold py-2 px-3 rounded-md text-sm uppercase tracking-widest hover:bg-green-700 hover:text-white transition-all duration-300 ml-8 lg:ml-12">Rezervasyon</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 z-50 justify-self-end">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <!-- Mobil Menü -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-10 text-2xl font-orbitron">
+            <a href="#neden-biz" class="menu-link text-gray-300">NEDEN BİZ</a>
+            <a href="#hizmetler" class="menu-link text-gray-300">DENEYİMLER</a>
+            <a href="#hakkimizda" class="menu-link text-gray-300">HAKKIMIZDA</a>
+            <a href="#galeri" class="menu-link text-gray-300">GALERİ</a>
+            <a href="#video-showcase" class="menu-link text-gray-300">VİDEO</a>
+            <a href="#yorumlar" class="menu-link text-gray-300">YORUMLAR</a>
+            <a href="#iletisim" class="menu-link text-gray-300">İLETİŞİM</a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Ana Karşılama Ekranı -->
+        <section id="hero">
+             <video autoplay muted loop playsinline preload="auto" id="hero-video" poster="https://placehold.co/1920x1080/000000/ffffff?text=Video+Yükleniyor...">
+                <!-- Yerel MP4 video kaynağı -->
+                <source src="sources/1017.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container mx-auto px-6 flex flex-col items-center justify-center h-full text-center">
+                <h1 id="hero-title" class="hero-title font-orbitron text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase opacity-0" style="text-shadow: 0 0 30px rgba(0,0,0,1);">
+                    EĞLENCENİN ZİRVESİ
+                </h1>
+                <p id="hero-subtitle" class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-200 font-light opacity-0">
+                    Karşıyaka'nın en premium simülasyon ve konsol lounge'unda, teknoloji ve konforun birleştiği noktada unutulmaz anlar sizi bekliyor.
+                </p>
+                <a id="hero-button" href="#iletisim" class="mt-10 inline-block btn-premium text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-widest opacity-0">
+                    Rezervasyon Yap
+                </a>
+            </div>
+            <div class="scroll-down-indicator text-white text-3xl opacity-0" id="scroll-indicator">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Neden Biz Bölümü -->
+        <section id="neden-biz" class="py-20 md:py-28 bg-black/20 backdrop-blur-sm">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">NEDEN 35/5 GARAGE?</h2>
+                    <p class="text-gray-400 mt-3 text-lg max-w-2xl mx-auto">Sıradan bir oyun salonundan daha fazlası; burası sizin premium kaçış noktanız.</p>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-green), var(--ksk-red));"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="reveal">
+                        <div class="p-6 bg-zinc-900 border border-gray-800 rounded-lg h-full transition-transform hover:-translate-y-2">
+                            <i class="fas fa-microchip text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h3 class="font-orbitron text-xl font-bold text-white mb-2">Son Teknoloji Ekipmanlar</h3>
+                            <p class="text-gray-400">En yeni nesil konsollar ve profesyonel simülatörlerle oyun deneyimini zirvede yaşayın.</p>
+                        </div>
+                    </div>
+                     <div class="reveal" style="transition-delay: 150ms;">
+                        <div class="p-6 bg-zinc-900 border border-gray-800 rounded-lg h-full transition-transform hover:-translate-y-2">
+                           <i class="fas fa-couch text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h3 class="font-orbitron text-xl font-bold text-white mb-2">Maksimum Konfor</h3>
+                            <p class="text-gray-400">Ergonomik oyuncu koltukları ve ferah alanlarımızda rahatınıza bakın.</p>
+                        </div>
+                    </div>
+                     <div class="reveal" style="transition-delay: 300ms;">
+                        <div class="p-6 bg-zinc-900 border border-gray-800 rounded-lg h-full transition-transform hover:-translate-y-2">
+                           <i class="fas fa-gamepad text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h3 class="font-orbitron text-xl font-bold text-white mb-2">Üstün Kalite</h3>
+                            <p class="text-gray-400">Profesyonel ekibimizle beraber, her oyun deneyimini en iyi şekilde yaşayın.</p>
+                        </div>
+                    </div>
+                     <div class="reveal" style="transition-delay: 450ms;">
+                        <div class="p-6 bg-zinc-900 border border-gray-800 rounded-lg h-full transition-transform hover:-translate-y-2">
+                           <i class="fas fa-shield-alt text-4xl mb-4" style="color: var(--gold);"></i>
+                            <h3 class="font-orbitron text-xl font-bold text-white mb-2">Nezih ve Güvenli Ortam</h3>
+                            <p class="text-gray-400">Ailelerin ve arkadaş gruplarının keyifle vakit geçirebileceği, hijyen ve güvenliğin ön planda olduğu bir atmosfer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Hizmetler Bölümü -->
+        <section id="hizmetler" class="py-20 md:py-28" style="background-color: var(--light-anthracite);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">DENEYİMLER</h2>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-green), var(--ksk-red));"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card reveal">
+                        <div class="content flex flex-col items-center text-center">
+                            <div class="icon-glow text-5xl mb-6 text-gray-500"><i class="fas fa-flag-checkered"></i></div>
+                            <h3 class="text-2xl font-bold font-orbitron text-white mb-3">PROFESYONEL SİMÜLASYON</h3>
+                            <p class="text-gray-400">Pistlerin heyecanını, force-feedback direksiyonlar ve üçlü monitörlerle en gerçekçi haliyle yaşayın.</p>
+                        </div>
+                    </div>
+                    <div class="service-card reveal" style="transition-delay: 200ms;">
+                         <div class="content flex flex-col items-center text-center">
+                            <div class="icon-glow text-5xl mb-6 text-gray-500"><i class="fab fa-playstation"></i></div>
+                            <h3 class="text-2xl font-bold font-orbitron text-white mb-3">PLAYSTATION 5</h3>
+                            <p class="text-gray-400">Sevdiklerinizle ister sahada isterseniz ringte rekabet ederek günlük hayatın stresinden kaçın.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hakkımızda Bölümü -->
+        <section id="hakkimizda" class="py-20 md:py-28" style="background: linear-gradient(135deg, var(--light-anthracite) 0%, rgba(30,30,30,0.9) 100%);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">HAKKIMIZDA</h2>
+                    <p class="text-gray-400 mt-3 text-lg max-w-2xl mx-auto">35/5 Garage, Karşıyaka'da premium oyun ve simülasyon deneyimini bir üst seviyeye taşıyan, konfor ve teknolojiyi aynı çatı altında buluşturan seçkin bir mekandır.</p>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-red), var(--gold));"></div>
+                </div>
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-zinc-900/50 p-8 sm:p-12 rounded-xl border border-gray-800 reveal">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-3xl font-bold font-orbitron mb-4" style="color: var(--gold);">Misyonumuz</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Misafirlerimize nezih ve güvenli bir ortamda, en güncel ekipmanlarla üst düzey eğlence sunmak. Simülasyon tutkunlarından konsol severlere kadar herkesin kendini özel hissedeceği bir deneyim tasarlıyoruz.
+                        </p>
+                        <div class="section-divider"></div>
+                        <div class="grid grid-cols-2 gap-6 mt-6">
+                            <div class="bg-zinc-900 p-5 rounded-lg border border-gray-800 text-center">
+                                <div class="text-3xl mb-2" style="color: var(--gold);"><i class="fas fa-star"></i></div>
+                                <div class="font-orbitron text-white">Premium Ortam</div>
+                            </div>
+                            <div class="bg-zinc-900 p-5 rounded-lg border border-gray-800 text-center">
+                                <div class="text-3xl mb-2" style="color: var(--gold);"><i class="fas fa-tools"></i></div>
+                                <div class="font-orbitron text-white">Güncel Ekipman</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 relative overflow-hidden rounded-xl group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-red-500 via-gold to-green-500 opacity-40 blur-sm rounded-2xl group-hover:opacity-60 transition-opacity"></div>
+                        <img src="sources/hakkımızda.jpg" alt="35/5 Garage - Hakkımızda" class="relative rounded-xl w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Bölümü -->
+        <section id="galeri" class="py-20 md:py-28" style="background: linear-gradient(135deg, var(--anthracite) 0%, var(--light-anthracite) 100%);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">ATMOSFERDEN KARELER</h2>
+                    <p class="text-gray-400 mt-3 text-lg max-w-2xl mx-auto">35/5 Garage ortamını, ekipmanlarımızı ve deneyim alanlarımızı keşfedin.</p>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-green), var(--ksk-red));"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group gallery-item reveal">
+                        <img src="sources/genel.jpeg" alt="Genel Görünüm">
+                        <div class="gallery-overlay">
+                            <div class="text-white font-orbitron text-lg">Genel Görünüm</div>
+                        </div>
+                    </div>
+                    <div class="group gallery-item reveal" style="transition-delay: 100ms;">
+                        <img src="sources/fifa.jpeg" alt="FIFA Lounge">
+                        <div class="gallery-overlay">
+                            <div class="text-white font-orbitron text-lg">FIFA Lounge</div>
+                        </div>
+                    </div>
+                    
+                    <div class="group gallery-item reveal" style="transition-delay: 400ms;">
+                        <img src="sources/ekipman.jpeg" alt="Ekipmanlar">
+                        <div class="gallery-overlay">
+                            <div class="text-white font-orbitron text-lg">Ekipmanlar</div>
+                        </div>
+                    </div>
+                    <div class="group gallery-item reveal" style="transition-delay: 500ms;">
+                        <img src="sources/direksiyondolu.jpeg" alt="Direksiyon Simülatörü">
+                        <div class="gallery-overlay">
+                            <div class="text-white font-orbitron text-lg">Direksiyon Simülatörü</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Showcase Section -->
+        <section id="video-showcase" class="py-20 md:py-28 relative overflow-hidden" style="background: linear-gradient(135deg, var(--anthracite) 0%, var(--light-anthracite) 100%);">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-10 left-10 w-32 h-32 border border-gold rounded-full animate-pulse"></div>
+                <div class="absolute top-32 right-20 w-24 h-24 border border-red-500 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-20 h-20 border border-green-500 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white mb-4">
+                        DENEYİMİMİZİ KEŞFEDİN
+                    </h2>
+                    <p class="text-gray-400 mt-3 text-lg max-w-2xl mx-auto">
+                        35/5 Garage'ın atmosferini ve ekipmanlarımızı yakından görün
+                    </p>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-green), var(--ksk-red), var(--gold));"></div>
+                </div>
+                
+                <!-- Redesigned Two-Column Layout -->
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <!-- Left: Text & Social -->
+                    <div class="reveal order-2 lg:order-1">
+                        <h3 class="text-3xl font-bold font-orbitron text-white mb-4">PREMİUM GAMİNG DENEYİMİ</h3>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                            En son teknoloji simülatörler ve konforlu oyun alanlarımızla unutulmaz anlar yaşayın.
+                            Profesyonel ekipmanlar ve nezih ortamımızla oyun deneyiminizi zirveye taşıyın.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="https://www.instagram.com/[YOUR_USERNAME]" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-md border border-gray-700 text-gray-200 hover:text-white hover:border-gold transition-colors">
+                                <i class="fab fa-instagram mr-2 text-2xl"></i>
+                                Instagram
+                            </a>
+                            <a href="https://wa.me/[YOUR_PHONE_NUMBER]" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-md border border-gray-700 text-gray-200 hover:text-white hover:border-green-500 transition-colors">
+                                <i class="fab fa-whatsapp mr-2 text-2xl"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right: Video -->
+                    <div class="reveal order-1 lg:order-2">
+                        <div class="video-container relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                            <div class="relative aspect-video rounded-xl overflow-hidden dark-film">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/rbTs2Nt1sV8" 
+                                    title="35/5 Garage Experience"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    class="w-full h-full rounded-xl transition-transform duration-300"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Info Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                    <div class="reveal text-center group">
+                        <div class="bg-gradient-to-br from-red-500/10 to-transparent p-6 rounded-xl border border-red-500/20 hover:border-red-500/40 transition-all duration-300 group-hover:transform group-hover:scale-105">
+                            <i class="fas fa-video text-4xl mb-4 text-red-500 group-hover:text-red-400 transition-colors"></i>
+                            <h4 class="font-orbitron text-lg font-bold text-white mb-2">4K Kalite</h4>
+                            <p class="text-gray-400 text-sm">Yeni nesil son teknoloji monitörlerimiz ile kendinizi pistin içerisinde hissedin.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal text-center group" style="transition-delay: 100ms;">
+                        <div class="bg-gradient-to-br from-gold/10 to-transparent p-6 rounded-xl border border-gold/20 hover:border-gold/40 transition-all duration-300 group-hover:transform group-hover:scale-105">
+                            <i class="fas fa-headset text-4xl mb-4 text-gold group-hover:text-yellow-400 transition-colors"></i>
+                            <h4 class="font-orbitron text-lg font-bold text-white mb-2">Ekipman Kalitesi</h4>
+                            <p class="text-gray-400 text-sm">Profesyonel Ekipmanlarımız ile hayalini kurduğunuz yarışları kazanın</p>
+                    </div>
+                    </div>
+                    
+                    <div class="reveal text-center group" style="transition-delay: 200ms;">
+                        <div class="bg-gradient-to-br from-green-500/10 to-transparent p-6 rounded-xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group-hover:transform group-hover:scale-105">
+                            <i class="fas fa-share-alt text-4xl mb-4 text-green-500 group-hover:text-green-400 transition-colors"></i>
+                            <h4 class="font-orbitron text-lg font-bold text-white mb-2">Sosyal Medya</h4>
+                            <p class="text-gray-400 text-sm">Sosyal medyada bizi takip edin ve deneyiminizi bizi etiketleyip paylaşın.</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yorumlar Bölümü -->
+        <section id="yorumlar" class="py-20 bg-light-anthracite overflow-hidden">
+             <div class="container mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">MİSAFİRLERİMİZİN GÖZÜNDEN</h2>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-green), var(--ksk-red));"></div>
+                </div>
+                <div class="marquee reveal">
+                    <div class="marquee-content space-x-8">
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"İzmir'deki en kaliteli simülasyon deneyimi. Ekipmanlar harika, ortam çok nezih. Kesinlikle tekrar geleceğim!"</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Ahmet Y.</div></div>
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"Arkadaşlarla PS5 oynamak için mükemmel bir yer. Koltuklar rahat, ekranlar devasa. Karşıyaka'ya yakışan bir mekan."</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Elif S.</div></div>
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"Çocuğumla geldim ve ikimiz de çok eğlendik. Aileler için de son derece uygun, temiz ve güvenli bir ortam."</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Murat D.</div></div>
+                        <!-- Kopyalar -->
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"İzmir'deki en kaliteli simülasyon deneyimi. Ekipmanlar harika, ortam çok nezih. Kesinlikle tekrar geleceğim!"</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Ahmet Y.</div></div>
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"Arkadaşlarla PS5 oynamak için mükemmel bir yer. Koltuklar rahat, ekranlar devasa. Karşıyaka'ya yakışan bir mekan."</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Elif S.</div></div>
+                        <div class="testimonial-card bg-zinc-900 p-6 rounded-lg w-80 md:w-96 border border-gray-800"><p class="italic">"Çocuğumla geldim ve ikimiz de çok eğlendik. Aileler için de son derece uygun, temiz ve güvenli bir ortam."</p><div class="mt-4 font-bold text-right" style="color: var(--gold);">- Murat D.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- İletişim & Rezervasyon -->
+        <section id="iletisim" class="py-20 md:py-28" style="background-color: var(--anthracite);">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-extrabold font-orbitron text-white">BİZE ULAŞIN</h2>
+                    <div class="w-24 h-1 mx-auto mt-4" style="background: linear-gradient(90deg, var(--ksk-red), var(--gold));"></div>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 bg-zinc-900/50 p-8 sm:p-12 rounded-lg border border-gray-800">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold font-orbitron mb-6" style="color: var(--gold);">Konum & Bilgiler</h3>
+                        <div class="space-y-6 text-gray-300 text-lg">
+                             <p class="flex items-start"><i class="fas fa-map-marker-alt fa-fw pt-1 mr-4 text-red-500"></i> <span>TİYATRO SOKAK NO:74/B TUNA MAH. KARŞIYAKA, 35600 KARŞIYKA/İzmir ,<br>Karşıyaka / İzmir</span></p>
+                             <p class="flex items-center"><i class="fas fa-phone fa-fw mr-4 text-red-500"></i> <a href="tel:+90XXXXXXXXXX" class="hover:text-white transition-colors">+90 551 567 19 12 / +90 540 057 19 12</a></p>
+                             <p class="flex items-center"><i class="fas fa-clock fa-fw mr-4 text-red-500"></i> <span>Her Gün: 10:00 - 01:00</span></p>
+                        </div>
+                        <div class="mt-8 rounded-md overflow-hidden border border-gray-700">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3124.2526252282414!2d27.1189438!3d38.4587287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd9566a3701af%3A0xeeddd5b19d7767c5!2s35%2F5%20Playstation%20Cafe!5e0!3m2!1str!2str!4v1760726509372!5m2!1str!2str" width="100%" height="250" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                     <div class="reveal" style="transition-delay: 200ms;">
+                         <h3 class="text-3xl font-bold font-orbitron mb-6 text-center" style="color: var(--gold);">Rezervasyon Formu</h3>
+                         <form id="reservation-form" action="/api/submit" method="POST" class="space-y-6">
+                            <input name="name" type="text" placeholder="Ad Soyad" required class="w-full bg-gray-800/50 border-2 border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors">
+                            <input name="phone" type="tel" placeholder="Telefon Numarası" required class="w-full bg-gray-800/50 border-2 border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors">
+                            <input name="date" type="datetime-local" class="w-full bg-gray-800/50 border-2 border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors" />
+                            <textarea name="message" placeholder="Mesajınız (Tarih, saat, kişi sayısı, hangi hizmetle ilgilendiğiniz vb.)" rows="5" class="w-full bg-gray-800/50 border-2 border-gray-700 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"></textarea>
+                            <button type="submit" class="w-full btn-premium text-white font-bold py-3 px-6 rounded-md uppercase tracking-wider">
+                                Talebi Gönder
+                            </button>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+             <a href="#hero" class="inline-block mb-4">
+                 <img src="sources/WhatsApp Image 2025-09-01 at 18.15.30_a92e116c.png" alt="35/5 Garage logo" class="h-10 md:h-12 mx-auto w-auto select-none" loading="lazy" />
+             </a>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="#" aria-label="Instagram" class="text-gray-500 hover:text-white transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook" class="text-gray-500 hover:text-white transition-colors text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-white transition-colors text-2xl"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2024 35/5 Garage. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP (GreenSock Animation Platform) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

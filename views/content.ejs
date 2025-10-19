@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İçerik Yönetimi</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+  <style>
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    .preview{background:#141417;border:1px solid #27272a;border-radius:10px;padding:16px}
+    .muted{color:#9ca3af}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>İçerik Yönetimi</h1>
+      <div class="topbar-actions">
+        <a href="/admin">Panel</a>
+        <a href="/admin/randevular">Randevular</a>
+        <a href="/admin/gorseller">Görseller</a>
+        <a href="/admin/tema">Renkler</a>
+        <a href="/admin/logout">Çıkış</a>
+      </div>
+    </div>
+
+    <% if (kaydedildi) { %><div class="success">Değişiklikler kaydedildi.</div><% } %>
+
+    <div class="grid">
+      <form id="icerikForm" method="POST" action="/admin/icerik">
+        <label>Hero Başlık</label>
+        <input name="hero_title" value="<%= content.hero_title?.body || '' %>" oninput="sync()" placeholder="EĞLENCENİN ZİRVESİ" />
+        <label>Hero Alt Başlık</label>
+        <textarea name="hero_subtitle" rows="3" oninput="sync()" placeholder="Kısa açıklama"><%= content.hero_subtitle?.body || '' %></textarea>
+        <label>Hakkımızda Metni</label>
+        <textarea name="hakkimizda_metin" rows="6" oninput="sync()"><%= content.hakkimizda_metin?.body || '' %></textarea>
+        <button type="submit">Kaydet</button>
+      </form>
+
+      <div class="preview">
+        <h2 class="muted">Canlı Önizleme</h2>
+        <h1 id="p_title" style="font-size:24px;margin:8px 0 0 0"><%= content.hero_title?.body || '' %></h1>
+        <p id="p_sub" class="muted" style="margin:6px 0 16px 0"><%= content.hero_subtitle?.body || '' %></p>
+        <hr style="border-color:#27272a" />
+        <h3 style="margin:12px 0 6px 0">Hakkımızda</h3>
+        <p id="p_about" style="white-space:pre-wrap"><%= content.hakkimizda_metin?.body || '' %></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function sync(){
+      const f=document.getElementById('icerikForm');
+      p_title.textContent=f.hero_title.value;
+      p_sub.textContent=f.hero_subtitle.value;
+      p_about.textContent=f.hakkimizda_metin.value;
+    }
+  </script>
+</body>
+</html>

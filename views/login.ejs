@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Giriş</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Giriş</h1>
+    <% if (error) { %>
+      <div class="alert"><%= error %></div>
+    <% } %>
+    <form method="POST" action="/admin/login">
+      <label>Kullanıcı Adı</label>
+      <input name="username" type="text" required />
+      <label>Şifre</label>
+      <input name="password" type="password" required />
+      <button type="submit">Giriş Yap</button>
+    </form>
+  </div>
+</body>
+</html>

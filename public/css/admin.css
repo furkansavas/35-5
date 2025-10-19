@@ -1,0 +1,22 @@
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:#0f0f10;color:#e5e7eb;margin:0}
+.container{max-width:1000px;margin:40px auto;padding:0 16px}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+h1{font-size:24px;margin:0}
+.topbar-actions a{color:#9ca3af;text-decoration:none;margin-left:12px}
+.topbar-actions a:hover{color:#fff}
+.alert{background:#3f1d1d;color:#fca5a5;padding:12px 14px;border:1px solid #7f1d1d;border-radius:8px;margin:12px 0}
+.success{background:#0c2b1c;color:#86efac;padding:12px 14px;border:1px solid #14532d;border-radius:8px;margin:12px 0}
+form{display:flex;flex-direction:column;gap:10px;background:#141417;border:1px solid #27272a;padding:16px;border-radius:10px}
+label{font-size:14px;color:#d1d5db}
+input,textarea,select{background:#0b0b0d;color:#f3f4f6;border:1px solid #303036;border-radius:8px;padding:10px}
+button{background:#1f2937;color:#fff;border:1px solid #374151;border-radius:8px;padding:10px 14px;cursor:pointer}
+button:hover{background:#374151}
+button.danger{background:#7f1d1d;border-color:#b91c1c}
+button.danger:hover{background:#991b1b}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.card{background:#141417;border:1px solid #27272a;border-radius:10px;padding:14px;color:#d1d5db}
+table{width:100%;border-collapse:collapse;background:#141417;border:1px solid #27272a;border-radius:10px;overflow:hidden}
+th,td{border-bottom:1px solid #27272a;padding:10px;text-align:left}
+th{background:#0b0b0d}
+.wrap{white-space:pre-wrap;word-break:break-word}
+.hint{font-size:12px;color:#9ca3af}

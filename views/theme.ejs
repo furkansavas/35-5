@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renk ve Tema Ayarları</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+  <style>
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:700px){.row{grid-template-columns:1fr}}
+    .preview{margin-top:16px;background:#141417;border:1px solid #27272a;border-radius:10px;padding:16px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>Renk & Tema</h1>
+      <div class="topbar-actions">
+        <a href="/admin">Panel</a>
+        <a href="/admin/randevular">Randevular</a>
+        <a href="/admin/icerik">İçerik</a>
+        <a href="/admin/gorseller">Görseller</a>
+        <a href="/admin/logout">Çıkış</a>
+      </div>
+    </div>
+
+    <% if (kaydedildi) { %><div class="success">Renkler güncellendi.</div><% } %>
+
+    <form id="themeForm" method="POST" action="/admin/tema">
+      <div class="row">
+        <div>
+          <label>Birincil Renk</label>
+          <input name="primary" type="color" value="<%= theme.primary %>" oninput="sync()" />
+        </div>
+        <div>
+          <label>İkincil Renk</label>
+          <input name="secondary" type="color" value="<%= theme.secondary %>" oninput="sync()" />
+        </div>
+        <div>
+          <label>Arkaplan</label>
+          <input name="background" type="color" value="<%= theme.background %>" oninput="sync()" />
+        </div>
+        <div>
+          <label>Yazı Rengi</label>
+          <input name="text" type="color" value="<%= theme.text %>" oninput="sync()" />
+        </div>
+      </div>
+      <label>Mod</label>
+      <select name="mode" onchange="sync()">
+        <option value="dark" <%= theme.mode==='dark'?'selected':'' %>>Koyu</option>
+        <option value="light" <%= theme.mode==='light'?'selected':'' %>>Açık</option>
+      </select>
+      <button type="submit">Kaydet</button>
+    </form>
+
+    <div class="preview" id="preview">
+      <h2>Önizleme</h2>
+      <p>Bu alan, renk değişikliklerini canlı gösterir.</p>
+      <button>Buton</button>
+    </div>
+  </div>
+
+  <script>
+    function sync(){
+      const f=document.getElementById('themeForm');
+      const p=document.getElementById('preview');
+      p.style.setProperty('background', f.background.value);
+      p.style.setProperty('color', f.text.value);
+      p.querySelector('button').style.setProperty('background', f.primary.value);
+      p.querySelector('button').style.setProperty('border-color', f.secondary.value);
+    }
+    sync();
+  </script>
+</body>
+</html>

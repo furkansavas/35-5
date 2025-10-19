@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Görseller / Videolar</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+  <style>
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .item{background:#141417;border:1px solid #27272a;border-radius:10px;padding:10px}
+    .thumb{width:100%;height:140px;object-fit:cover;border-radius:8px;border:1px solid #27272a;background:#0b0b0d}
+    .row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>Görseller / Videolar</h1>
+      <div class="topbar-actions">
+        <a href="/admin">Panel</a>
+        <a href="/admin/randevular">Randevular</a>
+        <a href="/admin/icerik">İçerik</a>
+        <a href="/admin/tema">Renkler</a>
+        <a href="/admin/logout">Çıkış</a>
+      </div>
+    </div>
+
+    <h2>Yeni Yükleme</h2>
+    <form method="POST" action="/admin/gorseller/yukle" enctype="multipart/form-data">
+      <label>Başlık (isteğe bağlı)</label>
+      <input name="title" placeholder="Örn: Hakkımızda Görseli" />
+      <label>Dosya (resim veya video)</label>
+      <input name="file" type="file" accept="image/*,video/*" required />
+      <button type="submit">Yükle</button>
+      <div class="hint">Desteklenen türler: JPG, PNG, WEBP, MP4 vb.</div>
+    </form>
+
+    <h2 style="margin-top:20px">Mevcut Dosyalar</h2>
+    <div class="grid">
+      <% list.forEach(x => { %>
+        <div class="item">
+          <% if (x.type==='image') { %>
+            <img class="thumb" src="<%= x.path %>" alt="<%= x.title %>" />
+          <% } else { %>
+            <video class="thumb" src="<%= x.path %>" muted loop></video>
+          <% } %>
+          <div class="row">
+            <span style="color:#d1d5db"><%= x.title || (x.type==='image'?'Görsel':'Video') %></span>
+            <form method="POST" action="/admin/gorseller/<%= x._id %>/sil" onsubmit="return confirm('Silinsin mi?')">
+              <button class="danger" type="submit">Sil</button>
+            </form>
+          </div>
+          <div class="hint"><code><%= x.path %></code></div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

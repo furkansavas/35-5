@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>Yönetim Paneli</h1>
+      <div class="topbar-actions">
+        <a href="/admin/randevular">Randevular</a>
+        <a href="/admin/icerik">İçerik</a>
+        <a href="/admin/gorseller">Görseller</a>
+        <a href="/admin/tema">Renkler</a>
+        <a href="/admin/settings">WhatsApp</a>
+        <a href="/admin/logout">Çıkış</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="card">Toplam: <strong><%= count %></strong></div>
+      <div class="card">Bekleyen: <strong><%= pending %></strong></div>
+      <div class="card">Ulaşılan: <strong><%= contacted %></strong></div>
+    </div>
+    <h2>Son Başvurular</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ad</th><th>Telefon</th><th>Tarih</th><th>Durum</th><th>Oluşturulma</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% items.forEach(i => { %>
+        <tr>
+          <td><%= i.name %></td>
+          <td><%= i.phone %></td>
+          <td><%= i.date ? new Date(i.date).toLocaleString('tr-TR') : '-' %></td>
+          <td><%= i.status %></td>
+          <td><%= new Date(i.createdAt).toLocaleString('tr-TR') %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

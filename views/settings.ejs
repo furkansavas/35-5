@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayarlar</title>
+  <link rel="stylesheet" href="/public/css/admin.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>Ayarlar</h1>
+      <div class="topbar-actions">
+        <a href="/admin">Panel</a>
+        <a href="/admin/appointments">Kayıtlar</a>
+        <a href="/admin/logout">Çıkış</a>
+      </div>
+    </div>
+    <% if (saved) { %><div class="success">Kaydedildi</div><% } %>
+    <form method="POST" action="/admin/settings">
+      <label>WhatsApp Numarası (ülke kodu ile, ör: 905XXXXXXXXX)</label>
+      <input name="whatsappNumber" value="<%= settings.whatsappNumber || '' %>" />
+      <label>Mesaj Şablonu</label>
+      <textarea name="messageTemplate" rows="6"><%= settings.messageTemplate || '' %></textarea>
+      <p class="hint">Kullanılabilir değişkenler: {{name}}, {{phone}}, {{date}}, {{message}}</p>
+      <button type="submit">Kaydet</button>
+    </form>
+  </div>
+</body>
+</html>
